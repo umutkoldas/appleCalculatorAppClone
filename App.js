@@ -12,6 +12,7 @@ const App = () => {
   const [activeButton, setActiveButton] = useState(false);
 
   const deleteNumbers = () => {
+    setActiveButton(false);
     setAddNumber("0");
     setMemory(null);
     setOperator(null);
@@ -59,6 +60,7 @@ const App = () => {
   };
 
   const equalsTo = () => {
+    setActiveButton(false);
     setLastButton("number");
     lastButton !== "operator" && setAddNumber(calculate());
     setOperator(null);
