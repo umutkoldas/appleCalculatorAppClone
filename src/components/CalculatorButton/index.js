@@ -1,15 +1,18 @@
-import React from 'react';
-import {Text, TouchableOpacity} from 'react-native';
-import styles from './styles';
+import React from "react";
+import { Text, TouchableOpacity } from "react-native";
+import styles from "./styles";
 
-const CalculatorButton = ({item}) => {
-  const {text, type, onPress} = item;
+const CalculatorButton = ({ item, isActive }) => {
+  const { text, type, onPress } = item;
   return (
     <TouchableOpacity
-      style={styles[type]}
+      style={isActive ? styles.activeButton : styles[type]}
       onPress={onPress}
-      activeOpacity={0.5}>
-      <Text style={styles[`${type}Text`]}>{text}</Text>
+      activeOpacity={0.5}
+    >
+      <Text style={isActive ? styles.activeButtonText : styles[`${type}Text`]}>
+        {text}
+      </Text>
     </TouchableOpacity>
   );
 };

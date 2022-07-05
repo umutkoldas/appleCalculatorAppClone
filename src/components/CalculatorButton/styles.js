@@ -1,11 +1,11 @@
-import {StyleSheet, Dimensions} from 'react-native';
-import COLORS from '../../theme/colors';
-const {width} = Dimensions.get('screen');
+import { StyleSheet, Dimensions } from "react-native";
+import COLORS from "../../theme/colors";
+const { width } = Dimensions.get("screen");
 const viewWidth = width / 4 - 17.5;
 
 const defaultButtonView = {
-  justifyContent: 'center',
-  alignItems: 'center',
+  justifyContent: "center",
+  alignItems: "center",
   width: viewWidth,
   height: viewWidth,
   borderRadius: viewWidth / 2,
@@ -14,7 +14,7 @@ const defaultButtonView = {
 
 const defaultButtonText = {
   fontSize: 30,
-  fontWeight: '600',
+  fontWeight: "600",
 };
 
 const styles = StyleSheet.create({
@@ -46,12 +46,20 @@ const styles = StyleSheet.create({
     ...defaultButtonView,
     width: viewWidth * 2,
     backgroundColor: COLORS.darkGrey,
-    alignItems: 'flex-start',
+    alignItems: "flex-start",
   },
   zeroNumberText: {
     ...defaultButtonText,
     color: COLORS.white,
     marginHorizontal: 33,
+  },
+  activeButton: {
+    ...defaultButtonView,
+    backgroundColor: COLORS.white,
+  },
+  activeButtonText: {
+    ...defaultButtonText,
+    color: COLORS.orange,
   },
 });
 export default styles;
